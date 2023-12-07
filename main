@@ -1,0 +1,13 @@
+import urllib3
+
+
+def main():
+    http = urllib3.PoolManager()
+
+    json = http.request("GET", "https://jsonip.com").json()
+
+    print(f"Your IP Address is {json['ip']}")
+
+
+if __name__ == '__main__':
+    main()
